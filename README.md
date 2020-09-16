@@ -2,7 +2,6 @@
 
 ![Language count badge](https://img.shields.io/github/languages/count/GustavoMatsunaga/ArticleComponent)
 ![Code size badge](https://img.shields.io/github/languages/code-size/GustavoMatsunaga/ArticleComponent)
-![Commit activity badge](https://img.shields.io/github/commit-activity/m/GustavoMatsunaga/Articlecomponent)
 
 In order to practice some technologies, I build this model to an article component.
 </br>
