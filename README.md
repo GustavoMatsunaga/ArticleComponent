@@ -5,6 +5,7 @@
 ![Commit activity badge](https://img.shields.io/github/commit-activity/m/GustavoMatsunaga/Articlecomponent)
 
 In order to practice some technologies, I build this model to an article component.
+</br>
 You can checkout the model here : <strong><a href="https://gustavomatsunaga.github.io/ArticleComponent/">Article Website</a></strong>
 
 ## Challenges! :pushpin:
