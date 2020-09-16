@@ -9,16 +9,16 @@ shareIcon.addEventListener('click', () => {
 
 function shareColorChange () {
     if (screen.clientWidth <= 760) {
-            shareIcon.src = "../images/icon-share.svg";
+            shareIcon.src = "./images/icon-share.svg";
             shareIcon.style.backgroundColor = "hsl(210, 46%, 95%)";
     }
     else {
         if (shareIcon.classList.length > 1) {
-            shareIcon.src = "../images/icon-share-inverted.svg";
+            shareIcon.src = "./images/icon-share-inverted.svg";
             shareIcon.style.backgroundColor = "hsl(217, 19%, 35%)";
     
         } else {
-            shareIcon.src = "../images/icon-share.svg";
+            shareIcon.src = "./images/icon-share.svg";
             shareIcon.style.backgroundColor = "hsl(210, 46%, 95%)";
         }
     }
