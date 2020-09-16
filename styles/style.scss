@@ -1,45 +1,9 @@
-/* # Front-end Style Guide
-
-## Layout
-
-The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px
-
-## Colors
-
-- Very Dark Grayish Blue: hsl(217, 19%, 35%)
-- Desaturated Dark Blue: hsl(214, 17%, 51%)
-- Grayish Blue: hsl(212, 23%, 69%)
-- Light Grayish Blue: hsl(210, 46%, 95%)
-
-## Typography
-
-### Body Copy
-
-- Font size: 13px
-
-### Headings
-
-- Family: [Manrope](https://fonts.google.com/specimen/Manrope)
-- Weights: 500, 700
-
-## Icons
-
-We provide SVGs for the social icons. But please feel free to use a font icon library if you like. Some suggestions can be found below:
-
-- [Font Awesome](https://fontawesome.com)
-- [IcoMoon](https://icomoon.io)
-- [Ionicons](https://ionicons.com)
-*/
-
 //Colors
 $very-dark-grayish-blue: hsl(217, 19%, 35%);
 $desaturated-dark-blue: hsl(214, 17%, 51%);
 $grayish-blue: hsl(212, 23%, 69%);
 $light-grayish-blue: hsl(210, 46%, 95%);
-$mobile: (max-width: 760px);
+$break-mobile: 760px;
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
 
@@ -69,7 +33,7 @@ body {
     display: grid;
     grid-template-columns: 0.4fr 0.6fr;
 
-    @media (max-width: 760px) {
+    @media (max-width: $break-mobile) {
         display: flex;
         align-content: center;
         justify-content: center;
@@ -83,8 +47,10 @@ body {
     border-radius: 0 1rem 1rem 0;
     padding: 3.2rem;
 
-    @media (max-width: 760px) {
+    @media (max-width: $break-mobile) {
         border-radius: 0 0 1rem 1rem;
+        position: relative;
+        padding: 0;
     }
 
     &-header-img {
@@ -92,12 +58,15 @@ body {
         height: 100%;
         border-radius: 1rem 0 0 1rem;
 
-        @media (max-width: 760px) {
+        @media (max-width: $break-mobile) {
         border-radius: 1rem 1rem 0 0;
         }
     }
 
-    &-body {        
+    &-body {
+        @media (max-width: $break-mobile) {
+            padding: 3.2rem 3.2rem 0 3.2rem;
+        }        
         h2 {
             font-size: 1.2rem;
             font-weight: bold;
@@ -116,7 +85,9 @@ body {
         justify-content: space-between;
         align-items: center;
 
-        @media (max-width: 7)
+        @media (max-width: $break-mobile) {
+            padding: 0 2rem 2rem 2rem;
+        }
 
         &-profile {
             display: flex;
@@ -139,33 +110,24 @@ body {
         }
 
         &-share {
-            background-color: $light-grayish-blue;
             padding: 0.9rem;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: 200ms;
-            cursor: pointer;
 
-            &:hover {
-                background-color: $very-dark-grayish-blue;
-            }
-
-            img {
-                transition: 200ms;
-                &:hover {
-                    transform: scale(1.2);
-                }
-            }
-
-            &-button {
+            &-icon {
+                padding: 1.2rem;
+                background-color: $light-grayish-blue;
+                border-radius: 50%;
+                cursor: pointer;
+            }  
+            
+            &-box {
                 position: relative;
-                opacity: 1;
-                transition: 700ms all ease;
 
-                &:hover {
-                    background-color: $very-dark-grayish-blue;
+                @media(max-width: $break-mobile){
+                    position: initial;
                 }
 
                 &:before {
@@ -175,6 +137,10 @@ body {
                     border-bottom: 0;
                     position: absolute;
                     bottom: 2rem;
+
+                    @media(max-width: $break-mobile) {
+                        display: none;
+                    }
                 }
 
                 &-span {
@@ -190,7 +156,15 @@ body {
                     border-radius: 0.4rem;
                     padding: 1rem 1.4rem;
 
-                    cursor: initial;
+                    @media(max-width: $break-mobile){
+                        position: absolute;
+                        width: 100%;
+                        height: 30%;
+                        left: 0;
+                        bottom: 0;
+                        border-radius: 0 0 1rem 1rem;
+                        justify-content: left;
+                    }
 
                     p {
                         letter-spacing: 0.5rem;
@@ -208,6 +182,13 @@ body {
 }
 
 .hidden {
-    transition: 700ms all ease;
-    opacity: 0;
+    display: none;
+}
+
+@media (max-width: $break-mobile) {
+    .activated {
+    position: absolute;
+    left: 86%;
+    top: 75%;
+    }
 }
